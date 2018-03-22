@@ -17,6 +17,7 @@ install:
 script:
     - flake8 *.py submissions/*/*.py
     - jupyter nbconvert --execute radar_trajectories_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL  --ExecutePreprocessor.timeout=600
+    - python download_data.py
     - ramp_test_submission
     - ramp_test_submission --submission more_features
 notifications:
